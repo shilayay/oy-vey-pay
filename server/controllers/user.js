@@ -61,6 +61,7 @@ const signIn = async (req, res) => {
         return res.status(200).json({ message: 'User signed in successfully' }); 
 
     } catch (error) {
+        console.log(error);
         if (error instanceof z.ZodError) {
             return res.status(400).json({ message: error.errors[0].message }); 
         }
